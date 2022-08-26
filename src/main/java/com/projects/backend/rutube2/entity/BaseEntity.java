@@ -1,5 +1,6 @@
 package com.projects.backend.rutube2.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,9 +18,11 @@ public abstract class BaseEntity {
     private Long id;
 
     @Column(name = "created_date")
-    private Date createdDate;
+    @JsonIgnore
+    private Date createdDate = new Date();
 
     @Column(name = "updated_date")
-    private Date updatedDate;
+    @JsonIgnore
+    private Date updatedDate = new Date();
 
 }
