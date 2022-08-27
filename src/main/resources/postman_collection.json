@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "e80a07b3-2929-41a4-bbaf-2cc1a3590d2b",
+		"name": "Rutube 2.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8757030"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "GetProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "13",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/profile",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/user/10",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"NewName\",\r\n    \"email\": \"NewEmail\",\r\n    \"password\": \"NewPass\",\r\n    \"description\": \"description\",\r\n    \"avatarPath\": \"avatar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/user/13",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"user",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "Subscribe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "10",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/subscribe/13",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"subscribe",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "GetById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/video/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/video?searchTerm=nam",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "nam"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMostPopular",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/video/popular",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "13",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/video/create",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateVideo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"NewVideo\",\r\n        \"public\": true,\r\n        \"description\": \"It's New Video!\",\r\n        \"videoPath\": \"Some path\",\r\n        \"thumbnailPath\": \"Some path\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/video/update/4",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteVideo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/video/delete/5",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateLikes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/video/update-likes/4",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"update-likes",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateViews",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/video/update-views/4",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"video",
+								"update-views",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "CreateComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Cool video!\",\r\n    \"video\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/comment/13",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"comment",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
