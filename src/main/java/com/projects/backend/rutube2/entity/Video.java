@@ -1,5 +1,7 @@
 package com.projects.backend.rutube2.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +10,8 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -24,23 +28,29 @@ public class Video extends BaseEntity {
 
     @Column(name = "is_public")
     @Type(type = "org.hibernate.type.NumericBooleanType")
-    private boolean isPublic;
+    private boolean isPublic = false;
 
-    private Integer views;
+    private Integer views = 0;
 
-    private Integer likes;
+    private Integer likes = 0;
 
-    private String duration;
+    private String duration = "";
+
+    private String description = "";
 
     @Column(name = "video_path")
-    private String videoPath;
+    private String videoPath = "";
 
     @Column(name = "thumbnail_path")
-    private String thumbnailPath;
+    private String thumbnailPath = "";
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @OneToMany(mappedBy = "video")
+    @JsonManagedReference
+    private List<Comment> comments = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {

@@ -1,5 +1,6 @@
 package com.projects.backend.rutube2.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +28,7 @@ public class Comment extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "video_id")
+    @JsonBackReference
     private Video video;
 
     @Override
